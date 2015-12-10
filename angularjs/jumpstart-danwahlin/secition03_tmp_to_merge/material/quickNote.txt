@@ -1,0 +1,41 @@
+
+A Quick Note About Controller Functions
+
+As Angular has changed over the years the ways you use controllers have changed as well.
+As mentioned in the video, with Angular 1.2 you can use "stand-alone" functions (this was shown
+in the previous videos) to create controllers:
+
+function CustomersController($scope) {
+    // do something here
+}
+
+Some people still use Angular 1.2 since it "officially" supports Internet Explorer 8 (IE8)
+but controllers really won't be used as stand-alone functions in "real" apps.
+So why am I showing them here then? The simple answer is that most people learn best
+by showing simple concepts and then building upon them.
+Once you understand that a controller is really just a JavaScript function is makes the
+process of learning about controllers much easier.
+
+In just a few lectures from now, you'll learn about "modules" and see how a controller function
+can be put into an Angular module (for now think of a module like a "tupperware" container
+that can hold things). If you're using Angular 1.3 or higher the stand-alone function
+approach shown above won't work since the Angular team changed that functionality.
+If you want to get the stand-alone controller function to work before "officially" learning about
+Angular modules simply add the following into your code if you're following along and running
+the code yourself:
+
+1. Create a module in your script block:
+
+    var demoApp = angular.module('demoApp', []);
+
+2. Add your controller function into the module:
+
+    demoApp.controller('CustomersController', function($scope) {
+    });
+
+3. Update the ng-app directives to the following so it knows about the module:
+
+    ng-app="demoApp"
+
+As mentioned, modules will be covered shortly, but for those interested in getting everything working
+right now if you're following along this is what you can do if you're using Angular 1.3 or higher.
